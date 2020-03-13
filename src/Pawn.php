@@ -9,17 +9,17 @@ class Pawn extends Figure
             $cur_to = $figures[$xTo][$yTo]->isBlack();
             if(($cur_from == $cur_to && $figures[$xTo][$yTo]!=$figures[$xFrom--][$yFrom++])
                 || $cur_from == $cur_to && $figures[$xTo][$yTo]!=$figures[$xFrom++][$yFrom++]){
-                throw new \Exception("Game rules violated своих не бьем");
+                throw new \Exception("Game rules violated ");
             }
         } else {
             if($xFrom != $xTo && $yFrom !=$yTo){
-                throw new \Exception("Game rules violated по диагонали не хдим");
+                throw new \Exception("Game rules violated ");
             }
         }
         $this->isBlack() ? --$yFrom : ++$yFrom;
         if (($yFrom == 3 && $yTo == 4) || ($yFrom == 6 && $yTo == 5) ) {
            if(isset($figures[$xFrom][$yFrom++])){
-                throw new \Exception("Game rules violated перепрыгивать нельзя");
+                throw new \Exception("Game rules violated ");
             }
             $out = true;
         } else {
