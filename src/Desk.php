@@ -67,16 +67,10 @@ class Desk {
             if($this->current_step === $this->figures[$xFrom][$yFrom]->isBlack()){
                 throw new \Exception("Broken sequence of steps");
             }
-
-            echo $this->figures[$xFrom][$yFrom]->isBlack()?"черные ":"белые ";
-
-
             $this->current_step = $this->figures[$xFrom][$yFrom]->isBlack();
-
                 if(!$this->figures[$xFrom][$yFrom]->validate($xFrom,$yFrom,$xTo,$yTo,$this->figures)){
                     throw new \Exception("Game rules violated");
                 }
-
                 $this->figures[$xTo][$yTo] = $this->figures[$xFrom][$yFrom];
         }
         unset($this->figures[$xFrom][$yFrom]);
